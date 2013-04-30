@@ -105,6 +105,21 @@
             </properties>
         </profile>
         <profile>
+            <id>Solaris</id>
+            <activation>
+	        <property>
+	            <name>os.name</name>
+	            <value>SunOS</value>
+	        </property>
+            </activation>
+            <properties>
+	        <native.os>${os.name}</native.os>
+	        <native.path>src/.libs/libjzmq.so</native.path>
+	        <!-- Use platform-specific path separators here: -->
+	        <native.library-path>src/.libs/</native.library-path>
+            </properties>
+        </profile>
+        <profile>
             <id>os-distro</id>
             <activation>
 	        <property>
@@ -248,7 +263,7 @@
 	        <artifactId>maven-surefire-plugin</artifactId>
 	        <configuration>
 	            <forkMode>once</forkMode>
-	            <argLine>-Djava.library.path=${native.library-path.resolved}</argLine>
+	            <argLine>-Djava.library.path=${native.library-path.resolved} -d64</argLine>
 	        </configuration>
             </plugin>
             <plugin>
