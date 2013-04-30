@@ -108,7 +108,7 @@ reload_flag=" -r"
 reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 
 # An object symbol dumper.
-OBJDUMP="objdump"
+OBJDUMP="false"
 
 # Method to check whether dependent libraries are shared objects.
 deplibs_check_method="pass_all"
@@ -153,7 +153,7 @@ objdir=.libs
 SHELL="/bin/sh"
 
 # An echo program that does not interpret backslashes.
-ECHO="/pub/tools/local/bin/echo"
+ECHO="/usr/ucb/echo"
 
 # Used to examine libraries when file_magic_cmd begins with "file".
 MAGIC_CMD=file
